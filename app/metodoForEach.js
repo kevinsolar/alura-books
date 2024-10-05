@@ -2,6 +2,9 @@ const elementoParaInserirLivros = document.getElementById('livros');
 
 function exibirLivrosNaTela(listaDeLivros) {
 
+   //funcao criada para iniciar sempre como uma string vazia, entao quando for solicitada novamente vai zerar e acrescentar somente a que foi requisitada.
+   elementoParaInserirLivros.innerHTML = ''
+
    //Utilizaremos o foreach para cada 'livro' que tiver na lista, para conseguirmos usar as informacoes obtidas sem precisar criar 300 divs na mao, assim ele cria de acordo com o tamanho do nosso array
    listaDeLivros.forEach(livro => {
       elementoParaInserirLivros.innerHTML += `
