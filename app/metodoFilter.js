@@ -5,7 +5,8 @@ function filtrarLivros() {
    const elementoBtn = document.getElementById(this.id);
    const categoria = elementoBtn.value;
 
-   let livrosFiltrados = livros.filter( livro => livro.categoria == categoria )
+   //Fazendo a verificacao de se o valor do btn "Livros Disponiveis" foi clicado, para mostrar somente os livros disponiveis, mas caso contrario vai filtrar pela categoria.
+   let livrosFiltrados =  categoria == 'disponivel' ? livros.filter( livro => livro.quantidade > 0 ) : livros.filter( livro => livro.categoria == categoria )
 
    exibirLivrosNaTela(livrosFiltrados)
 }
