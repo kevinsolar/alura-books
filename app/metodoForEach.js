@@ -1,6 +1,8 @@
 const elementoParaInserirLivros = document.getElementById('livros');
+const elementoComValorTotalDeLivrosDisp = document.getElementById('valor_total_livros_disponiveis');
 
 function exibirLivrosNaTela(listaDeLivros) {
+   elementoComValorTotalDeLivrosDisp.innerHTML = '';
 
    //funcao criada para iniciar sempre como uma string vazia, entao quando for solicitada novamente vai zerar e acrescentar somente a que foi requisitada.
    elementoParaInserirLivros.innerHTML = ''
@@ -13,7 +15,11 @@ function exibirLivrosNaTela(listaDeLivros) {
 
       let disponibiliade = livro.quantidade > 0 ? 'livro__imagens' : 'livro__imagens indisponivel' ;
 
-      ledno isso seria: se a quantidade de livros for maior que 0, entao retorne 'x', se nao retorne 'y'
+      lendo isso seria: se a quantidade de livros for maior que 0, entao retorne 'x', se nao retorne 'y'
+      */
+
+      /*
+         ** Funcao que de fato exibe os itens na tela :
       */
       elementoParaInserirLivros.innerHTML += `
       <div class="livro">
